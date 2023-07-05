@@ -15,3 +15,7 @@ npm update
 npm install -g aws-cdk
 #prepare for deployment
 cdk bootstrap
+cdk deploy
+cdk deploy --all
+cdk destroy
+cdk destroy --all
