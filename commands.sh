@@ -7,3 +7,11 @@ nvm install 18.0.0
 nvm use 18.0.0
 node --version
 cdk init app --language typescript
+npm run build
+cdk synth
+npm outdated
+# make sure this ^ is set in package.json
+npm update
+npm install -g aws-cdk
+#prepare for deployment
+cdk bootstrap
