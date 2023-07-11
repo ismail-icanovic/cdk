@@ -5,7 +5,8 @@ import {Construct} from "constructs";
 export class basicLambdaStack extends cdk.Stack{
     // Making the object accessible for reuse
   public readonly lambdaFunction: lambda.Function;
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     const function_name = 'ismail-cdk-lambda';
