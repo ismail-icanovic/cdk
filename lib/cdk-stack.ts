@@ -10,7 +10,7 @@ export interface S3Props extends cdk.StackProps{
 export class S3BucketStack extends cdk.Stack {
   public readonly bucket: s3.Bucket;
 
-  constructor(scope: Construct, id: string, props: S3Props) {
+  constructor(scope: cdk.App, id: string, props: S3Props) {
     super(scope, id, props);
 
     // The code that defines your stack goes here

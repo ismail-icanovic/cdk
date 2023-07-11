@@ -7,8 +7,7 @@ nvm install 18.0.0
 nvm use 18.0.0
 node --version
 cdk init app --language typescript
-npm run build
-cdk synth
+npm run build && cdk synth
 npm outdated
 # make sure this ^ is set in package.json
 npm update
@@ -19,3 +18,13 @@ cdk deploy
 cdk deploy --all
 cdk destroy
 cdk destroy --all
+cdk deploy --hotswap
+cdk watch
+npx cdk bootstrap aws://857798077713/us-east-1 --profile default \
+    --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess
+
+
+#workaround for cdk destroy
+#!/bin/bash
+STACKS="$(cdk list | tr '\n' ' ')"
+cdk destroy ${STACKS}
